@@ -33,8 +33,13 @@ var usuario = {
     apellido: 'Carrillo',
     cedula: '12132',
     edad: '22',
-    //imprimir:(),
+    imprimir: function () {
+        console.log(this.nombre+' '+this.apellido+ this.edad);
+
+    }
 };
+console.log('usuario');
+usuario.imprimir();
 console.log(usuario.nombre);
 console.log(usuario);
 delete usuario.edad;
@@ -45,7 +50,7 @@ usuario.mascotas={};
 usuario.mascotas.nombre = 'Jorge';
 console.log(usuario);
 
-var arreglo = [1,'Jorge',true,undefined,null,new Date(),{nombre:'Jorge'},[12,12]];
+var arreglo = [1,'Jorge',true,undefined,null,new Date(),{nombre:'Jorge'},[12,12], usuario.imprimir()];
 console.log("Arreglo");
 console.log(arreglo);
 
@@ -65,7 +70,11 @@ return numero*numero;
 
 console.log(potenciaDeDosDeUnNumero(3,23,3,4,5,2));
 console.log(potenciaDeDosDeUnNumero(2));
+console.log(usuario.imprimir);
 
-
+var arreglo = [1,'Jorge',true,undefined,null,new Date(),{nombre:'Jorge'},[12,12],
+    edadAlCuadrado: potenciaDeDosDeUnNumero()];
+console.log("Arreglo");
+console.log(arreglo);
 
 
