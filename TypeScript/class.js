@@ -24,11 +24,31 @@ var jorge = new Usuario('Jorge', false, 22);
 console.log(jorge);
 console.log(luis);
 var Usuario2 = /** @class */ (function () {
-    function Usuario2(nombre, casado, edad) {
+    function Usuario2(nombre, _casado, edad) {
         this.nombre = nombre;
-        this.casado = casado;
+        this._casado = _casado;
         this.edad = edad;
     }
+    Object.defineProperty(Usuario2.prototype, "casado", {
+        get: function () {
+            return this._casado;
+        },
+        set: function (casado) {
+            this._casado = casado;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Usuario2.prototype.imprimirUsuario = function (saludo) {
+        // Templeade String
+        return saludo + ". Mi nombre es " + this.nombre + ", estoy casado " + this.casado + ", mi edad es " + this.edad;
+    };
     return Usuario2;
 }());
+var jo = {
+    nombre: 'oeoeoe', edad: 28
+};
 var jorge2 = new Usuario2('Jorge', false, 22);
+console.log(jorge2);
+console.log(jorge2.casado);
+console.log(jorge2.imprimirUsuario('Hola soy '));
