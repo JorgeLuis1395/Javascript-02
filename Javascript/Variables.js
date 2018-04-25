@@ -72,8 +72,7 @@ console.log(potenciaDeDosDeUnNumero(3,23,3,4,5,2));
 console.log(potenciaDeDosDeUnNumero(2));
 console.log(usuario.imprimir);
 
-var arreglo = [1,'Jorge',true,undefined,null,new Date(),{nombre:'Jorge'},[12,12],
-    edadAlCuadrado: potenciaDeDosDeUnNumero()];
+var arreglo = [1,'Jorge',true,undefined,null,new Date(),{nombre:'Jorge'},[12,12]];
 console.log("Arreglo");
 console.log(arreglo);
 
