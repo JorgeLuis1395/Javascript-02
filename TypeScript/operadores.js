@@ -39,7 +39,9 @@ var nuevoArregloDeUsuarios = arregloUsuarios.map(function (usuario) {
     return usuario;
 }).filter(function (usuario) {
     return usuario.deuda < 50; // true o false
-});
+}).f /*.some((usuario:UsuarioArreglo)=>{ //every and, some or
+    return usuario.edad < 18 // true o false
+})*/;
 console.log(nuevoArregloDeUsuarios);
 function calcularDeuda(edadUsuario) {
     var totalEdad = arregloUsuarios.reduce(function (total, usuario) { return total + usuario.edad; }, 0);

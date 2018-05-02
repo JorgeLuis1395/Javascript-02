@@ -43,9 +43,11 @@ let nuevoArregloDeUsuarios = arregloUsuarios.map((usuario:UsuarioArreglo) =>{
     usuario.deuda = calcularDeuda(usuario.edad) ;
     return usuario;
 }).filter((usuario:UsuarioArreglo)=>{
-    return usuario.deuda < 50 // true o false
-});
-console.log(nuevoArregloDeUsuarios)
+    return usuario.deuda < 50  // true o false
+}).f/*.some((usuario:UsuarioArreglo)=>{ //every and, some or
+    return usuario.edad < 18 // true o false
+})*/;
+console.log(nuevoArregloDeUsuarios);
 interface UsuarioArreglo{
     nombre : string;
     edad : number;
