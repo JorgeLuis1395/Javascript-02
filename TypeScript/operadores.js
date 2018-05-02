@@ -32,7 +32,16 @@ var resultadoEdadUsuario = arregloUsuarios.reduce(function (acumulado, usuario) 
 console.log(resultadoEdadUsuario);
 console.log(resultadoDeLaSumaConReduce);
 var nuevoArregloDeUsuarios = arregloUsuarios.map(function (usuario) {
-    usuario.deuda = 0;
+    usuario.becado = false;
     return usuario;
+}).map(function (usuario) {
+    usuario.deuda = calcularDeuda(usuario.edad);
+    return usuario;
+}).filter(function (usuario) {
+    return usuario.deuda < 50; // true o false
 });
 console.log(nuevoArregloDeUsuarios);
+function calcularDeuda(edadUsuario) {
+    var totalEdad = arregloUsuarios.reduce(function (total, usuario) { return total + usuario.edad; }, 0);
+    return totalEdad * (edadUsuario / 100);
+}

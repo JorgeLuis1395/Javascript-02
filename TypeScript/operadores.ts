@@ -37,13 +37,23 @@ let resultadoEdadUsuario = arregloUsuarios.reduce((acumulado: number, usuario : 
 console.log(resultadoEdadUsuario);
 console.log(resultadoDeLaSumaConReduce);
 let nuevoArregloDeUsuarios = arregloUsuarios.map((usuario:UsuarioArreglo) =>{
-    usuario.deuda = 0;
+    usuario.becado = false;
     return usuario;
-} );
+}).map ((usuario:UsuarioArreglo) =>{
+    usuario.deuda = calcularDeuda(usuario.edad) ;
+    return usuario;
+}).filter((usuario:UsuarioArreglo)=>{
+    return usuario.deuda < 50 // true o false
+});
 console.log(nuevoArregloDeUsuarios)
 interface UsuarioArreglo{
     nombre : string;
     edad : number;
     deuda?: number
+    becado?: boolean
+}
+function calcularDeuda(edadUsuario: number) {
+    const totalEdad = arregloUsuarios.reduce((total, usuario:UsuarioArreglo) => total+usuario.edad,0);
+    return totalEdad * (edadUsuario/100)
 }
 
