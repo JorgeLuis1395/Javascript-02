@@ -51,14 +51,12 @@ class Usuario2 {
 
 }
 
-let jo: UsuarioTres = {
-    nombre: 'oeoeoe', edad: 28
-};
 
 interface UsuarioTres {
     nombre: string;
     casado?: boolean;
     edad: number;
+    imprimir (saludo: string): string
 }
 
 let jorge2 = new Usuario2('Jorge', false, 22);

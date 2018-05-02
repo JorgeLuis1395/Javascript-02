@@ -45,9 +45,6 @@ var Usuario2 = /** @class */ (function () {
     };
     return Usuario2;
 }());
-var jo = {
-    nombre: 'oeoeoe', edad: 28
-};
 var jorge2 = new Usuario2('Jorge', false, 22);
 console.log(jorge2);
 console.log(jorge2.casado);
